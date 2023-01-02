@@ -1,7 +1,14 @@
 package FoundationOfProgramming.Week1.Shape;
 
-abstract class Shape {
+import javax.swing.*;
+import java.awt.*;
+
+abstract class Shape extends JComponent {
     String color, type;
+
+    public Shape() {
+
+    }
 
     public Shape(String color, String type) {
         this.color = color;
@@ -22,4 +29,5 @@ abstract class Shape {
 
     public void displayShapeDetails() {
     }
+
 }

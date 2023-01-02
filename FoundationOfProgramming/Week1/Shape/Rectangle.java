@@ -1,9 +1,17 @@
 package FoundationOfProgramming.Week1.Shape;
 
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+
 public class Rectangle extends Shape {
 
     double height;
     double width;
+
+    public Rectangle(double height, double width) {
+        this.height = height;
+        this.width = width;
+    }
 
     public Rectangle(String color, String type, double height, double width) {
         super(color, type);
@@ -29,5 +37,16 @@ public class Rectangle extends Shape {
     @Override
     public void drawShape() {
         super.drawShape();
+    }
+
+    protected void paintComponent(Graphics g) {
+
+        Graphics2D g2d = (Graphics2D) g;
+        Rectangle2D.Double r = new Rectangle2D.Double(50, 50, this.width, this.height);
+//        ToDo: color
+//        g2d.setColor(new Color(100,149,237));
+        g2d.setColor(Color.orange);
+        g2d.fill(r);
+
     }
 }

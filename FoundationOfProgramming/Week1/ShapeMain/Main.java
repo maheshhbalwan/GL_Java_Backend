@@ -1,8 +1,5 @@
 package FoundationOfProgramming.Week1.ShapeMain;
 
-import FoundationOfProgramming.Week1.DrawShape.DrawCircle;
-import FoundationOfProgramming.Week1.DrawShape.DrawRectangle;
-import FoundationOfProgramming.Week1.DrawShape.DrawSquare;
 import FoundationOfProgramming.Week1.Shape.Circle;
 import FoundationOfProgramming.Week1.Shape.Rectangle;
 import FoundationOfProgramming.Week1.Shape.Square;
@@ -38,18 +35,21 @@ public class Main {
                     System.out.println("Enter the color!");
                     color = input.next();
 
-                    // TODO: color, drawShape()
-                    Rectangle rectangle = new Rectangle(color, "Rectangle", height, width);
-                    rectangle.displayShapeDetails();
-                    rectangle.drawShape();
+                    Rectangle rectangleObj = new Rectangle(color, "Rectangle", height, width);
+                    rectangleObj.displayShapeDetails();
+                    rectangleObj.drawShape();
 
-                    //        DrawRectangle
+//                    create frame object
                     jFrameObj = new JFrame();
-                    DrawRectangle dc = new DrawRectangle(width, height);
-                    jFrameObj.setSize(width, height);
+//                    set Frame object size
+                    jFrameObj.setSize(1000, 600);
+//                    set frame title
                     jFrameObj.setTitle("Drawing Rectangle in Java");
-                    jFrameObj.add(dc);
+//                    add rectangle object to frame - to print rectangle on frame
+                    jFrameObj.add(rectangleObj);    //no
+//                    close operation
                     jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                    frame visibility
                     jFrameObj.setVisible(true);
                     break;
 
@@ -60,17 +60,15 @@ public class Main {
                     System.out.println("Enter the color!");
                     color = input.next();
 
-                    // TODO: color, drawShape()
-                    Square square = new Square(color, "Square", side);
-                    square.displayShapeDetails();
-                    square.drawShape();
+                    // TODO: color
+                    Square squareObj = new Square(color, "Square", side);
+                    squareObj.displayShapeDetails();
+                    squareObj.drawShape();
 
-                    //        DrawSquare
                     jFrameObj = new JFrame();
-                    DrawSquare drawSquare = new DrawSquare(side);
-                    jFrameObj.setSize(side, side);
+                    jFrameObj.setSize(1000, 600);
                     jFrameObj.setTitle("Drawing Square in Java");
-                    jFrameObj.add(drawSquare);
+                    jFrameObj.add(squareObj);
                     jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     jFrameObj.setVisible(true);
                     break;
@@ -82,17 +80,14 @@ public class Main {
                     System.out.println("Enter the color!");
                     color = input.next();
 
-                    // TODO: color, drawShape()
-                    Circle circle = new Circle(color, "Circle", radius);
-                    circle.displayShapeDetails();
-                    circle.drawShape();
+                    Circle circleObj = new Circle(color, "Circle", radius);
+                    circleObj.displayShapeDetails();
+                    circleObj.drawShape();
 
-                    //        Draw Circle
                     jFrameObj = new JFrame();
-                    DrawCircle drawCircle = new DrawCircle(radius);
-                    jFrameObj.setSize(radius, radius);
+                    jFrameObj.setSize(1000, 600);
                     jFrameObj.setTitle("Drawing Circle in Java");
-                    jFrameObj.add(drawCircle);
+                    jFrameObj.add(circleObj);
                     jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     jFrameObj.setVisible(true);
                     break;
