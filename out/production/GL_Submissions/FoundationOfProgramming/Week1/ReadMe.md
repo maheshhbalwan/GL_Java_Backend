@@ -1,1 +1,0 @@
-The program runs from the Main.java file in ShapeMain folder.
