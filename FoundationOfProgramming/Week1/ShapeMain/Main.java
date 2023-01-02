@@ -14,82 +14,94 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the option for the name of the Shape. \n 1. Rectangle \n 2. Square \n 3. Circle ");
-        System.out.println("Enter 1, 2 or 3");
-        int choice = input.nextInt();
+        String color;
+        int choice;
+        JFrame jFrameObj;
+        do {
+            System.out.println("""
+                    --- Draw the Shape Program ---
+                    Enter the option for the name of the Shape.
+                    1. Rectangle
+                    2. Square
+                    3. Circle
+                    9. Exit the program
+                                
+                    Enter the option number: """);
+            choice = input.nextInt();
+            switch (choice) {
+                case 1: //            Rectangle
+                    System.out.println("You've selected Rectangle!");
+                    System.out.println("Enter the height!");
+                    int height = input.nextInt();
+                    System.out.println("Enter the width!");
+                    int width = input.nextInt();
+                    System.out.println("Enter the color!");
+                    color = input.next();
 
-        if (choice == 1) {
-//            Rectangle
-            System.out.println("You've selected Rectangle!");
-            System.out.println("Enter the height!");
-            int height = input.nextInt();
-            System.out.println("Enter the width!");
-            int width = input.nextInt();
-            System.out.println("Enter the color!");
-            String color = input.next();
+                    // TODO: color, drawShape()
+                    Rectangle rectangle = new Rectangle(color, "Rectangle", height, width);
+                    rectangle.displayShapeDetails();
+                    rectangle.drawShape();
 
-            Rectangle rectangle = new Rectangle(color, "Rectangle", height, width);
-            rectangle.displayDetails();
-            System.out.println("The area of the rectangle is " + rectangle.calcShapeArea());
-            System.out.println("The perimeter of the rectangle is " + rectangle.calcShapePerimeter());
-            rectangle.drawShape();
+                    //        DrawRectangle
+                    jFrameObj = new JFrame();
+                    DrawRectangle dc = new DrawRectangle(width, height);
+                    jFrameObj.setSize(width, height);
+                    jFrameObj.setTitle("Drawing Rectangle in Java");
+                    jFrameObj.add(dc);
+                    jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    jFrameObj.setVisible(true);
+                    break;
 
-            //        DrawRectangle
-            JFrame f = new JFrame();
-            DrawRectangle dc = new DrawRectangle(width, height);
-            f.setSize(width, height);
-            f.setTitle("Drawing Rectangle in Java");
-            f.add(dc);
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            f.setVisible(true);
+                case 2: //            Square
+                    System.out.println("You've selected Square!");
+                    System.out.println("Enter the side!");
+                    int side = input.nextInt();
+                    System.out.println("Enter the color!");
+                    color = input.next();
 
-        } else if (choice == 2) {
-//            Square
-            System.out.println("You've selected Square!");
-            System.out.println("Enter the side!");
-            int side = input.nextInt();
-            System.out.println("Enter the color!");
-            String color = input.next();
+                    // TODO: color, drawShape()
+                    Square square = new Square(color, "Square", side);
+                    square.displayShapeDetails();
+                    square.drawShape();
 
-            Square square = new Square(color, "Square", side);
-            square.displayDetails();
-            System.out.println(square.calcShapeArea());
-            System.out.println(square.calcShapePerimeter());
-            square.drawShape();
+                    //        DrawSquare
+                    jFrameObj = new JFrame();
+                    DrawSquare drawSquare = new DrawSquare(side);
+                    jFrameObj.setSize(side, side);
+                    jFrameObj.setTitle("Drawing Square in Java");
+                    jFrameObj.add(drawSquare);
+                    jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    jFrameObj.setVisible(true);
+                    break;
 
-            //        DrawSquare
-            JFrame f2 = new JFrame();
-            DrawSquare drawSquare = new DrawSquare(side);
-            f2.setSize(side, side);
-            f2.setTitle("Drawing Square in Java");
-            f2.add(drawSquare);
-            f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            f2.setVisible(true);
+                case 3://        Circle
+                    System.out.println("You've selected Circle!");
+                    System.out.println("Enter the radius!");
+                    int radius = input.nextInt();
+                    System.out.println("Enter the color!");
+                    color = input.next();
 
-        } else if (choice == 3) {
+                    // TODO: color, drawShape()
+                    Circle circle = new Circle(color, "Circle", radius);
+                    circle.displayShapeDetails();
+                    circle.drawShape();
 
-            //        Circle
-            System.out.println("You've selected Circle!");
-            System.out.println("Enter the radius!");
-            int radius = input.nextInt();
-            System.out.println("Enter the color!");
-            String color = input.next();
-
-            Circle circle = new Circle(color, "Circle", radius);
-            circle.displayDetails();
-            System.out.println(circle.calcShapeArea());
-            System.out.println(circle.calcShapePerimeter());
-            circle.drawShape();
-
-            //        Draw Circle
-            JFrame f3 = new JFrame();
-            DrawCircle drawCircle = new DrawCircle(radius);
-            f3.setSize(radius, radius);
-            f3.setTitle("Drawing Circle in Java");
-            f3.add(drawCircle);
-            f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            f3.setVisible(true);
-        }
+                    //        Draw Circle
+                    jFrameObj = new JFrame();
+                    DrawCircle drawCircle = new DrawCircle(radius);
+                    jFrameObj.setSize(radius, radius);
+                    jFrameObj.setTitle("Drawing Circle in Java");
+                    jFrameObj.add(drawCircle);
+                    jFrameObj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    jFrameObj.setVisible(true);
+                    break;
+                case 9: //  Exit
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 9);
+        System.out.println("Exiting the program...");
     }
-
 }

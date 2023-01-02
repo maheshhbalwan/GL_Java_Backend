@@ -1,10 +1,8 @@
 package FoundationOfProgramming.Week1.Shape;
 
-public class Shape {
-    String color;
-    String type;
+abstract class Shape {
+    String color, type;
 
-    //    constructor
     public Shape(String color, String type) {
         this.color = color;
         this.type = type;
@@ -22,9 +20,6 @@ public class Shape {
         System.out.println("Drawing the " + this.type);
     }
 
-    public void displayDetails() {
-        System.out.println("This is a " + this.type + " shape with " + this.color + " color.");
+    public void displayShapeDetails() {
     }
-
 }
-
