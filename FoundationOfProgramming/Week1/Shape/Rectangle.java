@@ -14,8 +14,6 @@ public class Rectangle extends Shape {
     @Override
     public double calcShapeArea() {
         return height * width;
-
-
     }
 
     @Override
@@ -24,10 +22,10 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public void displayDetails() {
-        System.out.println("This is a " + super.type+ " shape with " +  super.color + " color.");
-
+    public void displayShapeDetails() {
+        System.out.println("This is a " + super.type + " shape of " + super.color + " color. The Perimeter of the " + super.type + " is " + this.calcShapePerimeter() + " and the Area is " + this.calcShapeArea() + ".");
     }
+
     @Override
     public void drawShape() {
         super.drawShape();
