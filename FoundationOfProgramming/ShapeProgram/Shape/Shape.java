@@ -1,7 +1,6 @@
-package FoundationOfProgramming.Week1.Shape;
+package FoundationOfProgramming.ShapeProgram.Shape;
 
 import javax.swing.*;
-import java.awt.*;
 
 abstract class Shape extends JComponent {
     String color, type;

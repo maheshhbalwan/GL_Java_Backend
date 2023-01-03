@@ -1,8 +1,8 @@
-package FoundationOfProgramming.Week1.ShapeMain;
+package FoundationOfProgramming.ShapeProgram.ShapeMain;
 
-import FoundationOfProgramming.Week1.Shape.Circle;
-import FoundationOfProgramming.Week1.Shape.Rectangle;
-import FoundationOfProgramming.Week1.Shape.Square;
+import FoundationOfProgramming.ShapeProgram.Shape.Circle;
+import FoundationOfProgramming.ShapeProgram.Shape.Rectangle;
+import FoundationOfProgramming.ShapeProgram.Shape.Square;
 
 import javax.swing.*;
 import java.util.Scanner;

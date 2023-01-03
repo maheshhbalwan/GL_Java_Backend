@@ -1,4 +1,4 @@
-package FoundationOfProgramming.Week1.Shape;
+package FoundationOfProgramming.ShapeProgram.Shape;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
