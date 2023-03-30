@@ -4,8 +4,8 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class Circle extends Shape {
-    double radius;
-    final double PI = 3.14;
+    private double radius;
+    private final double PI = 3.14;
 
     public Circle(double radius) {
         this.radius = radius;

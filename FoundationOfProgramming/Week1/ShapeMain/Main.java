@@ -92,11 +92,11 @@ public class Main {
                     jFrameObj.setVisible(true);
                     break;
                 case 9: //  Exit
+                    System.out.println("Exiting the program...");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        } while (choice != 9);
-        System.out.println("Exiting the program...");
+        } while (choice != 0);
     }
 }

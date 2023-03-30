@@ -5,7 +5,7 @@ import java.awt.geom.Rectangle2D;
 
 public class Square extends Shape {
 
-    double side;
+    private double side;
 
     public Square(double side) {
         this.side = side;
