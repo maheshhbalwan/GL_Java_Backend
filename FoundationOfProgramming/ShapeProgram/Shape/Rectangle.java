@@ -1,29 +1,32 @@
-package FoundationOfProgramming.Week1.Shape;
+package FoundationOfProgramming.ShapeProgram.Shape;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
-public class Square extends Shape {
+public class Rectangle extends Shape {
 
-    private double side;
+    private double height;
+    private double width;
 
-    public Square(double side) {
-        this.side = side;
+    public Rectangle(double height, double width) {
+        this.height = height;
+        this.width = width;
     }
 
-    public Square(String color, String type, double side) {
+    public Rectangle(String color, String type, double height, double width) {
         super(color, type);
-        this.side = side;
+        this.height = height;
+        this.width = width;
     }
 
     @Override
     public double calcShapeArea() {
-        return side * side;
+        return height * width;
     }
 
     @Override
     public double calcShapePerimeter() {
-        return 4 * side;
+        return 2 * (height + width);
     }
 
     @Override
@@ -37,11 +40,13 @@ public class Square extends Shape {
     }
 
     protected void paintComponent(Graphics g) {
+
         Graphics2D g2d = (Graphics2D) g;
-        Rectangle2D.Double r = new Rectangle2D.Double(50, 50, side, side);
-        //        ToDo: color
+        Rectangle2D.Double r = new Rectangle2D.Double(50, 50, this.width, this.height);
+//        ToDo: color
 //        g2d.setColor(new Color(100,149,237));
-        g2d.setColor(Color.green);
+        g2d.setColor(Color.orange);
         g2d.fill(r);
+
     }
 }
